@@ -17,10 +17,11 @@ Question:
 On the basis of merit a company decides to promote some of its employee in its HR division at the end of the quarter because of their high performance .Write a
 query to find the employee IDs along with the names of all its employees who  work in the HR department  who earned a bonus of 5000 dollars or more in the last
 quarter
-
+ANS:
 SELECT ei.employee_ID, ei.name
 FROM employee_information ei
-JOIN last_quarter_bonus b ON b.employee_ID = ei.employee_ID
+JOIN last_quarter_bonus b
+ON b.employee_ID = ei.employee_ID
 WHERE ei.division LIKE 'HR'
 AND b.bonus >= 5000;
 
@@ -38,6 +39,10 @@ WHERE b.price>a.price
 ORDER BY stock_code asc;
 
 Country Codes:
+Question:
+A Company wants to contact each of its customers regarding the policy changes. They have international customers ,but their database does not include country 
+codes with their phone numbers.
+
 SELECT a.customer_id,a.name,concat("+",b.country_code,a.phone_number)
 FROM customers as a
 LEFT join country_codes as b 
@@ -45,7 +50,10 @@ ON a.country=b.country
 ORDER BY a.customer_id;
 
 Student Analysis:
-
+Question:
+A School recently conducted its annual examimation and wishers to know the list of academically low performing students to organize extra classes for them .Write a
+query to return the roll number and names of students who have a total of less than 100 marks including all 3 subjects
+AnS:
 SELECT a.roll_number,a.name
 FROM student_information a
 INNER JOIN examination_marks b
