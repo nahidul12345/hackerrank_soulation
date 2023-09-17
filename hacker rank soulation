@@ -13,6 +13,10 @@ ON a.advisor = b.employee_ID
 WHERE (b.gender = 'M' and b.salary>15000) or (b.gender = 'F' and b.salary>20000);
 
 Merit Rewards:
+Question:
+On the basis of merit a company decides to promote some of its employee in its HR division at the end of the quarter because of their high performance .Write a
+query to find the employee IDs along with the names of all its employees who  work in the HR department  who earned a bonus of 5000 dollars or more in the last
+quarter
 
 SELECT ei.employee_ID, ei.name
 FROM employee_information ei
@@ -25,6 +29,7 @@ Question:
 A stock is considered profitable if the predicted price is strictly greater than current price .write a query to find  the stock_codes of all the stocks which are
 pofitable based on  this definition .sort the output in ascending order.
 
+ANS:
 SELECT a.stock_code
 FROM price_today a
 INNER JOIN price_tomorrow b
