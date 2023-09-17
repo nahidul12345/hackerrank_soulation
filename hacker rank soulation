@@ -1,5 +1,11 @@
 Student Advisor:
+Questin :
+A university has Started a student -advisor plan whice assigns a professor as an advisor to each student for academic guidance. write a query to find the roll number
+and names of students who either have a male advisor with a salary of more than 15000 or a female advisor with a salary of more than 20000
 
+There are two tables in the database : student_information and faculty_information . the primary key of student_information is roll_number whereas that of faculty_information
+employee_Id.
+ Ans:
 SELECT roll_number,name
 FROM student_information a
 INNER JOIN faculty_information b
@@ -7,6 +13,7 @@ ON a.advisor = b.employee_ID
 WHERE (b.gender = 'M' and b.salary>15000) or (b.gender = 'F' and b.salary>20000);
 
 Merit Rewards:
+
 SELECT ei.employee_ID, ei.name
 FROM employee_information ei
 JOIN last_quarter_bonus b ON b.employee_ID = ei.employee_ID
@@ -14,6 +21,10 @@ WHERE ei.division LIKE 'HR'
 AND b.bonus >= 5000;
 
 Profitable Stocks:
+Question:
+A stock is considered profitable if the predicted price is strictly greater than current price .write a query to find  the stock_codes of all the stocks which are
+pofitable based on  this definition .sort the output in ascending order.
+
 SELECT a.stock_code
 FROM price_today a
 INNER JOIN price_tomorrow b
